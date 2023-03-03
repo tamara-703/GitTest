@@ -125,34 +125,61 @@ console.log("Hello Github");
 
 //if divisible by two, print fizz, if divisible by three, print buzz
 
-    function printFizzBuzz(firstNum, lastNum)
-    {
-      let fizzArray = [];
-      let buzzArray = [];
+    // function printFizzBuzz(firstNum, lastNum)
+    // {
+    //   let fizzArray = [];
+    //   let buzzArray = [];
 
-      while(firstNum < lastNum)
+    //   while(firstNum < lastNum)
+    //   {
+    //     if(firstNum % 3 == 0)
+    //     {
+    //       fizzArray.push("Fizz");
+
+    //     }
+    //     if(firstNum % 5 == 0 && firstNum % 3 !== 0)
+    //     {
+    //       buzzArray.push("Buzz");
+
+    //     }
+
+    //     firstNum++;
+    //   }
+
+    //   for(let i = 0; i < fizzArray.length; i++)
+    //   {
+    //     for(let j = 0; j < buzzArray.length; j++)
+    //     {
+    //       console.log(fizzArray[i]+buzzArray[j])
+    //     }
+    //   }
+    // }
+
+    // printFizzBuzz(1,100);
+
+let fb = [];
+// ADD CODE HERE
+
+for(let x = 1; x <= 16; x++)
+  {
+    if(x % 3 == 0 && x % 5 != 0)
       {
-        if(firstNum % 3 == 0)
+        fb.push("fizz");
+      } else if (x % 5 == 0 && x % 3 != 0)
         {
-          fizzArray.push("Fizz");
-
-        }
-        if(firstNum % 5 == 0 && firstNum % 3 !== 0)
-        {
-          buzzArray.push("Buzz");
-
-        }
-
-        firstNum++;
-      }
-
-      for(let i = 0; i < fizzArray.length; i++)
+          fb.push("buzz");
+        } else if(x % 3 == 0 && x % 5 == 0)
       {
-        for(let j = 0; j < buzzArray.length; j++)
-        {
-          console.log(fizzArray[i]+buzzArray[j])
-        }
-      }
-    }
+        	fb.push("fizzbuzz")
+      } else if(x % 3 != 0 && x % 5 != 0)
+      {
+       		fb.push(x);
+       }
+  }
 
-    printFizzBuzz(1,100);
+// should log: [1, 2, 'fizz', 4, 'buzz', 'fizz', 7, 8, 'fizz', 'buzz', 11, 'fizz', 13, 14, 'fizzbuzz', 16]
+
+for(let count = 0; count < fb.length; count++)
+  {
+    console.log(fb[count]);
+  }
